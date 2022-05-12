@@ -3,9 +3,7 @@ import { utilService } from "./util-service"
 export const storageService = {
     query,
     get,
-    post,
     put,
-    remove,
     postMany
 }
 
