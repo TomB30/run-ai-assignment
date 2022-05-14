@@ -7,14 +7,18 @@
 
     .header-logo {
         width: 70px;
+        margin: 10px;
     }
 
-    a {
-        padding: 10px 12px;
-        margin: 0 4px;
-    }
     > nav {
         display: flex;
         align-items: center;
+        
+        > * {
+            @include elToBtn();
+            padding: 10px 12px;
+            margin: 0 4px;
+            font-weight: 400;
+        }
     }
 }

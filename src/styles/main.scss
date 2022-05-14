@@ -1,3 +1,4 @@
+@import './basics/mixins';
 @import './basics/base';
 
 
@@ -5,5 +6,6 @@
 @import './views/home-page';
 
 @import './cmps/app-header';
+@import './cmps/sidebar-nav';
 @import './cmps/info-views';
 @import './cmps/dep-modal';

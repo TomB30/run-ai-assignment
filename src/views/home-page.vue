@@ -1,16 +1,18 @@
 <template>
   <section class="home-page">
-    <h1>Welcome to our company management app</h1>
-    <h3>Choose a company at the header to start managing</h3>
+    <h1>
+      <pre>
+        Manage departments and
+        employees in one place
+      </pre>
+    </h1>
+    <img src="@/assets/svgs/home-page.svg" alt="" />
   </section>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>

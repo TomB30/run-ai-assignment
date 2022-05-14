@@ -1,31 +1,28 @@
 <template>
   <section v-if="company" class="company-app">
-    <nav class="sidebar-nav">
-      <router-link
-        :to="'/company/' + company._id + '/department'"
-        title="Deparments"
-      >
-        <img src="@/assets/icons/departments.png" alt="" />
-        <div></div>
-      </router-link>
-      <router-link
-        :to="'/company/' + company._id + '/employee'"
-        title="Employees"
-      >
-        <img src="@/assets/icons/employees.png" alt="" />
-        <div></div>
-      </router-link>
-    </nav>
-    <router-view></router-view>
+    <sidebar-nav :company="company"></sidebar-nav>
+    <main>
+      <h1>
+        {{company.name}}
+      </h1>
+      <router-view></router-view>
+      <div class="blue-circle"></div>
+      <div class="pink-ellipse"></div>
+    </main>
   </section>
 </template>
 
 <script>
+import sidebarNav from "../cmps/sidebar-nav.vue";
+
 export default {
   data() {
     return {
       company: null,
     };
+  },
+  components:{
+    sidebarNav
   },
   computed: {
     companyId() {

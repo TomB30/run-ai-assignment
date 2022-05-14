@@ -19,26 +19,23 @@ async function query() {
     }
 }
 
-async function getById(id){
-    try{
-        const company = await storageService.get(compDB,id)
-        return company
-    }catch(err){
-
-    }
-}
-
-async function save(company){
+async function getById(id) {
     try {
-        const updatedCompany = await storageService.put(compDB,company)
-        return updatedCompany
-    }catch(err){
-        console.log('could not update company in DB',err);
+        const company = await storageService.get(compDB, id)
+        return company
+    } catch (err) {
+
     }
 }
 
-
-
+async function save(company) {
+    try {
+        const updatedCompany = (company._id) ? await storageService.put(compDB, company) : await storageService.post(compDB, company)
+        return updatedCompany
+    } catch (err) {
+        console.log('could not update company in DB', err);
+    }
+}
 
 
 async function _createCompanies() {
@@ -271,10 +268,10 @@ async function _createCompanies() {
     ]
 
     try {
-        const savedCompanies = await storageService.postMany(compDB,companies)
+        const savedCompanies = await storageService.postMany(compDB, companies)
         return savedCompanies
-    } catch(err){
-        console.log('could not create companies DB',err)
+    } catch (err) {
+        console.log('could not create companies DB', err)
     }
 }
 

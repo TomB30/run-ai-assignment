@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    color: #0b0c1e;
 }
 
 #app {
@@ -26,15 +27,6 @@ p {
 a {
     text-decoration: none;
     color: inherit;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-    &.router-link-active:not(.logo) {
-        background-color: #ffffff4a;
-    }
-
-    &:not(.logo):hover {
-        background-color: #ffffff4a;
-    }
 }
 
 img {
@@ -52,6 +44,7 @@ img {
 
 button {
     cursor: pointer;
+    font-size: 16px;
     font-weight: 500;
     padding: 4px 6px;
     border: none;

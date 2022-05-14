@@ -1,6 +1,6 @@
 <template>
   <section class="department-list" v-if="companyToEdit">
-    <h3>{{ companyToEdit.name }}'s Departments</h3>
+    <h2>Departments</h2>
     <table>
       <thead>
         <th>Department name</th>
@@ -8,13 +8,7 @@
         <th>Actions</th>
       </thead>
       <tbody>
-        <tr v-for="dep in deps" :key="dep.id">
-          <td>{{ dep.name }}</td>
-          <td>{{ dep.emps.length }}</td>
-          <td>
-            <button class="failure" @click="setDep(dep)">Remove</button>
-          </td>
-        </tr>
+        <dep-preview v-for="dep in deps" :key="dep.id" :dep="dep" @setDep="setDep"></dep-preview>
         <new-dep @createDep="createDep"></new-dep>
       </tbody>
     </table>
@@ -29,6 +23,7 @@
 <script>
 import newDep from './new-dep.vue';
 import depModal from './dep-modal.vue';
+import depPreview from './dep-preview.vue';
 export default {
   data() {
     return {
@@ -39,6 +34,7 @@ export default {
   components: {
     depModal,
     newDep,
+    depPreview
   },
   computed: {
     deps() {

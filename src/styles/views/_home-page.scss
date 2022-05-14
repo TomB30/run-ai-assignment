@@ -1,4 +1,10 @@
 .home-page {
-    padding: 20px;
-    text-align: center;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        font-size: 40px;
+    }
 }

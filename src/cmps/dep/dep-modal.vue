@@ -22,8 +22,8 @@
       <div v-if="!dep.emps?.length">
         <p>Are you sure you want to delete this department?</p>
         <div class="btns-container">
-          <button class="failure" @click="deleteDep">Ok</button>
-          <button class="success" @click="closeModal">Cancel</button>
+          <button class="success" @click="deleteDep">Ok</button>
+          <button class="failure" @click="closeModal">Cancel</button>
         </div>
       </div>
     </section>

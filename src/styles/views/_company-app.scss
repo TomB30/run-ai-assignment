@@ -2,32 +2,42 @@
     display: flex;
     flex-grow: 1;
 
-    .sidebar-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 85px;
-        background-color: #df1995;
-        a{
-            padding: 10px;
-            width: 60px;
-            height: 60px;
-            margin: 10px 0;
-            &.router-link-exact-active {
-                background-color: rgba(255,255,255,.3);
-                position: relative;
-                div {
-                    cursor:default;
-                    position: absolute;
-                    right: -12px;
-                    top: 22px;
-                    border-top: 8px solid transparent;
-                    border-right: 6px solid white;
-                    border-bottom: 8px solid transparent;
-                    height: 0;
-                    width: 0;
-                }
+    main {
+        margin: 20px;
+        flex: 1;
+        text-align: center;
+        h1 {
+            font-size: 40px;
+        }
+        table {
+            margin: 10px auto;
+            background-color: rgba(211, 211, 211, 0.813);
+
+            tr:nth-of-type(even){
+                background-color: rgb(183, 190, 246);
             }
+        }
+
+        &::after {
+            position: absolute;
+            top: 15%;
+            right: 10%;
+            background-color:#00263ec7;
+            border-radius: 50%;
+            height: 70px;
+            width: 70px;
+            content: "";
+        }
+        &::before {
+            position: absolute;
+            bottom: 20%;
+            left: 20%;
+            background-color:#df1996ca;
+            border-radius: 3em;
+            height: 70px;
+            width: 200px;
+            content: "";
+            z-index: -1;
         }
     }
 }

@@ -1,0 +1,13 @@
+@mixin elToBtn(){
+    text-decoration: none;
+    color: inherit;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    &.router-link-active:not(.logo) {
+        background-color: #ffffff4a;
+    }
+
+    &:not(.logo):hover {
+        background-color: #ffffff4a;
+    }
+}

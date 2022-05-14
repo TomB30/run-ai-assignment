@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import homePage from '../views/home-page.vue'
-import depList from '../cmps/dep-list.vue'
-import empList from '../cmps/emp-list.vue'
+import depList from '../cmps/dep/dep-list.vue'
+import empList from '../cmps/emp/emp-list.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

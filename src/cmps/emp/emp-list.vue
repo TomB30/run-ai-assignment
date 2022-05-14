@@ -1,10 +1,10 @@
 <template>
   <section v-if="companyToEdit" class="employee-list">
-    <h3>{{ companyToEdit.name }}'s Employees</h3>
+    <h2>Employees</h2>
     <label
       >Filter employees by department
       <select v-model="filterBy.depId" @change="setFilter">
-        <option value=""></option>
+        <option value="">All</option>
         <option v-for="dep in deps" :key="dep.id" :value="dep.id">
           {{ dep.name }}
         </option>
@@ -14,18 +14,11 @@
       <thead>
         <th>Name</th>
         <th>Department</th>
-        <th>Hiring date</th>
+        <th>Hired At</th>
         <th>Actions</th>
       </thead>
       <tbody>
-        <tr v-for="emp in employees" :key="emp.id">
-          <td>{{ emp.name }}</td>
-          <td>{{ emp.department }}</td>
-          <td>{{ emp.hiredAt }}</td>
-          <td>
-            <button class="failure" @click="removeEmp(emp.id)">Remove</button>
-          </td>
-        </tr>
+        <emp-preview v-for="emp in emps" :key="emp.id" :emp="emp" @removeEmp="removeEmp"></emp-preview>
         <new-emp @createEmp="createEmp" />
       </tbody>
     </table>
@@ -34,6 +27,7 @@
 
 <script>
 import newEmp from './new-emp.vue';
+import empPreview from './emp-preview.vue';
 export default {
   data() {
     return {
@@ -45,9 +39,10 @@ export default {
   },
   components: {
     newEmp,
+    empPreview
   },
   computed: {
-    employees() {
+    emps() {
       return this.companyToEdit.employees
         .filter((emp) =>
           this.filterBy.depId ? emp.departmentId === this.filterBy.depId : emp
